@@ -8,11 +8,11 @@ int main(){
   cout<<'\n';
   return 0;
   */
-  int z;
+  double x;
   int C = 90;
   int B = 0;
-  cin>>z;
-  bool needRevise = adjustB(z,B,C);
-  cout<<"your final B is "<< B<<endl;
-  cout<<"you need revise:? "<<needRevise<<endl;
+  cin>>x;
+
+  cout<<"arctan is: "<<arcTan(x)<<endl;
+  //  cout<<"you need revise:? "<<needRevise<<endl;
 }
