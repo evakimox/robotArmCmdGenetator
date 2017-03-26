@@ -19,7 +19,7 @@ bool adjustB(double z,int &B, int C){
     
     if(prevdiff<difference){      
       B=B-2*Bchange;
-      cout<<"initialB "<<initialB<<" final B "<<B<<endl;
+      //cout<<"initialB "<<initialB<<" final B "<<B<<endl;
       return (abs(initialB-B)>10)?1:0;
     }
     prevdiff = difference;
@@ -32,7 +32,7 @@ bool adjustC(double x, double y,int B, int &C){
   int initialC = C;
   double prevdiff = 9999999999;
 
-  cout<<"specified x: "<<x<<" specified y: "<<y<<endl;
+  //cout<<"specified x: "<<x<<" specified y: "<<y<<endl;
   double xsq = x*x;
   double ysq = y*y;
   double horizontal_length_sq = xsq+ysq;
@@ -64,4 +64,20 @@ bool adjustC(double x, double y,int B, int &C){
   }
 }
 
+int adjustA(double x, double y){
+  double tanxy = y/x;
+  return arcTan(tanxy);
+}
 
+void adjustABC(double x, double y, double z, int &A, int &B, int &C){
+  bool IfBNeedRefix = adjustB(z,B,C);
+  bool IfCNeedRefix = adjustC(x,y,B,C);
+  while(IfBNeedRefix||IfCNeedRefix){
+    IfBNeedRefix = adjustB(z,B,C);
+    cout<<"B is now "<<B<<endl;
+    IfCNeedRefix = adjustC(x,y,B,C);
+    cout<<"C is now "<<C<<endl;
+    cout<<'\n';
+  }
+  A = adjustA(x,y);
+}
