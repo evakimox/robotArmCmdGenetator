@@ -13,6 +13,7 @@ int main(){
   adjustABC(x,y,z,A,B,C);
 
   cout<<"finalA: "<<A<<" finalB: "<<B<<" finalC: "<<C<<endl;
+  cout<<"output: "<<"a "<<A+83<<" b "<<B+10<<" c "<<C<<endl;
   
   return 0;
 }

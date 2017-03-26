@@ -103,11 +103,7 @@ int arcTan(double tanValue){
   double prevdiff = 999;
   for(int i = 0; i<89;i++){
     difference = abs(listofTanValue[i]-tanValue);
-    cout<<"This angle is: "<<(i-44)*2<<endl;
-    cout<<"its tan value is "<<listofTanValue[i]<<endl;
-    cout<<"Input Value is "<<tanValue;
-    cout<<"difference toward the final value: "<<difference<<endl;
-    if(difference > prevdiff){
+      if(difference > prevdiff){
       return (i-44-1)*2;
     }
     prevdiff = difference;
