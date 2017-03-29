@@ -37,7 +37,7 @@ void moveTopoint(double x, double y, double z, bool fromLeft){
   int ServoB = B+10;
   int ServoC = C;
 
-  if(y>0&& ServoA>22&&ServoA<144&& ServoC>25&&ServoC<170&& ServoB>(180-C)&&ServoB<191-C){
+  if(y>0&& ServoA>22&&ServoA<144&& ServoC>25&&ServoC<170&& ServoB>0&&ServoB<191-C){
   }
   else{
     cout<<"Bad position"<<endl;
