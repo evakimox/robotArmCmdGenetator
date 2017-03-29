@@ -1,0 +1,9 @@
+#include "adjustB.cpp"
+
+void moveTopoint(double x, double y, double z){
+  int A = 0;
+  int B = 0;
+  int C = 140;
+  adjustABC(x,y,z,A,B,C);
+  cout<<"output: "<<A+83<<" a "<<B+10<<" b "<<C<<" c"<<endl;
+}
