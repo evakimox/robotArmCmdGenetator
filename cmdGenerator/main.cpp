@@ -7,7 +7,7 @@ int main(){
   double y;
   double z;
   bool Left;
-  cin>>x>>y>>z>>left;
+  cin>>x>>y>>z>>Left;
 
   moveTopoint(x,y,z,Left);
   return 0;
@@ -33,6 +33,17 @@ void moveTopoint(double x, double y, double z, bool fromLeft){
   int diffA = abs(A-iniA);
 
   bool ValidOrNot;
+  int ServoA = A+83;
+  int ServoB = B+10;
+  int ServoC = C;
+
+  if(ServoA>5&&ServoA<155&& ServoC>25&&ServoC<170&& ServoB>0&&ServoB<191-C){
+  }
+  else{
+    cout<<"Bad position"<<endl;
+    return;
+  }
+  
     
   cout<<"Destination: "<<A+83<<" a "<<B+10<<" b "<<C<<" c\n"<<endl;
 
