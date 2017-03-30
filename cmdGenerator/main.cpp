@@ -5,8 +5,7 @@
 #include <stdlib.h>
 void moveTopoint(double x, double y, double z, bool fromLeft);
 int main(int argc, char *argv[]){
-  cout<<argv[1]<<argv[2]<<argv[3]<<argv[4]<<endl;
-  if(argc < 5){
+  if(argc <5){
     cout<<"Not Enough argument, try agian"<<endl;
     return 0;
   }
@@ -18,8 +17,6 @@ int main(int argc, char *argv[]){
   bool Left = atoi(argv[4]);
 
   moveTopoint(x,y,z,Left);
-  
-  
   return 0;
 }
 
@@ -32,7 +29,6 @@ void moveTopoint(double x, double y, double z, bool fromLeft){
   int A = iniA;
   int B = iniB;
   int C = iniC;
-  
   adjustABC(x,y,z,A,B,C);
 
   //final position recorded

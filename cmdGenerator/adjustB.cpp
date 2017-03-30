@@ -7,7 +7,6 @@ bool adjustB(double z,int &B, int C){
 
   int Bchange = -2;
   double initialHeight = 12.3*sinof(C) - 14*sinof(B);
-  cout<<"Height initial: "<<initialHeight<<endl;
   if(initialHeight>=z){
     Bchange = 2;
   }
@@ -65,11 +64,12 @@ int adjustA(double x, double y){
 }
 
 void adjustABC(double x, double y, double z, int &A, int &B, int &C){
-  bool IfBNeedRefix = adjustB(z,B,C);
   bool IfCNeedRefix = adjustC(x,y,B,C);
+  bool IfBNeedRefix = adjustB(z,B,C);
+
   while(IfBNeedRefix||IfCNeedRefix){
-    IfBNeedRefix = adjustB(z,B,C);
     IfCNeedRefix = adjustC(x,y,B,C);
+    IfBNeedRefix = adjustB(z,B,C);
   }
   A = adjustA(x,y);
 }
