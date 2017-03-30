@@ -16,8 +16,6 @@ int main(int argc, char *argv[]){
   double x = atoi(argv[1]);
   double y = atoi(argv[2]);
   double z = atoi(argv[3]);
-  bool Left = atoi(argv[4]);
-
   unlatching(x,y,z);
   return 0;
 }
@@ -49,7 +47,7 @@ void unlatching(double x, double y, double z){
 
   //prepare file to be send to arduino
   ofstream Commands;
-  Commands.open("Commands.txt");
+  Commands.open("Commands_unlatch.txt");
   
   //check if position reachable
   if(y>0&& ServoA>22&&ServoA<144&& ServoC>25&&ServoC<170&& ServoB>0&&ServoB<191-C){

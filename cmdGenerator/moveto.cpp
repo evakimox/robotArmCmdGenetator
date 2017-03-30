@@ -2,8 +2,10 @@
 #include "adjustB.cpp"
 #include <unistd.h>
 #include <fstream>
+#include <string>
 #include <stdlib.h>
 void moveTopoint(double x, double y, double z, bool fromLeft);
+bool Listener(string filename);
 int main(int argc, char *argv[]){
   if(argc <5){
     cout<<"Not Enough argument, try agian"<<endl;
@@ -19,6 +21,21 @@ int main(int argc, char *argv[]){
   moveTopoint(x,y,z,Left);
   return 0;
 }
+
+bool Listener(string filename){
+  ifstream xyzvalues(filename);
+  if(xyzvalues.is_open()){
+    string line;
+    while(getline(xyzvalues,line)){
+      cout<<line<<endl;
+    }
+    xyzvalues.close();
+    return true;
+  }
+
+  return false;
+}
+  
 
 void moveTopoint(double x, double y, double z, bool fromLeft){
   //Initial Positions
