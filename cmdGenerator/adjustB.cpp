@@ -7,6 +7,7 @@ bool adjustB(double z,int &B, int C){
 
   int Bchange = -2;
   double initialHeight = 12.3*sinof(C) - 14*sinof(B);
+  cout<<"Height initial: "<<initialHeight<<endl;
   if(initialHeight>=z){
     Bchange = 2;
   }
